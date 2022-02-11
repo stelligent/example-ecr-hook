@@ -1,0 +1,27 @@
+{
+    "typeName": "Stelligent::ECRExample::Hook",
+    "description": "Example ECR compliance hook",
+    "sourceUrl": "https://github.com/stelligent/example-ecr-hook",
+    "documentationUrl": "https://github.com/stelligent/example-ecr-hook/blob/main/README.md",
+    "typeConfiguration": {
+        "properties": {
+        },
+        "additionalProperties": false
+    },
+    "required": [],
+    "handlers": {
+        "preCreate": {
+            "targetNames": [
+                "AWS::ECR::Repository"
+            ],
+            "permissions": []
+        },
+        "preUpdate": {
+            "targetNames": [
+                "AWS::ECR::Repository"
+            ],
+            "permissions": []
+        }
+    },
+    "additionalProperties": false
+}

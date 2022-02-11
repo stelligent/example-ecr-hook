@@ -1,0 +1,29 @@
+---
+Resources:
+  ImmutableEncryptedScanRepo:
+    Type: AWS::ECR::Repository
+    Properties:
+      EncryptionConfiguration:
+        EncryptionType: "KMS"
+      ImageScanningConfiguration:
+        ScanOnPush: "true"
+      ImageTagMutability: "IMMUTABLE"
+  ImmutableDefaultRepo:
+    Type: AWS::ECR::Repository
+    Properties:
+      ImageTagMutability: "IMMUTABLE"
+  ImmutableAESEncryptionScanRepo:
+    Type: AWS::ECR::Repository
+    Properties:
+      EncryptionConfiguration:
+        EncryptionType: "AES256"
+      ImageScanningConfiguration:
+        ScanOnPush: "true"
+      ImageTagMutability: "IMMUTABLE"
+  MutableAESEncryptionScanRepo:
+    Type: AWS::ECR::Repository
+    Properties:
+      EncryptionConfiguration:
+        EncryptionType: "AES256"
+      ImageScanningConfiguration:
+        ScanOnPush: "true"
